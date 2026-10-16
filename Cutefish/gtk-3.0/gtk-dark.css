@@ -3866,31 +3866,178 @@ messagedialog.csd decoration {
   background-color: #2C2C2C;
 }
 
-button.titlebutton:not(.suggested-action):not(.destructive-action) {
-  min-height: 36px;
-  min-width: 36px;
-  padding: 0;
-  margin: 0 4px;
+/* Cutefish OS Traffic Light Window Controls for GTK3 */
+headerbar.titlebar {
+  padding-left: 8px;
 }
 
-button.minimize.titlebutton:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:not(.suggested-action):not(.destructive-action), button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
-  background-color: "transparent";
+headerbar windowcontrols button,
+windowcontrols button,
+window.csd headerbar windowcontrols button,
+headerbar button.titlebutton,
+button.titlebutton,
+window.csd headerbar button.titlebutton {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: none;
+  background-color: transparent;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 4px !important;
+  min-width: 14px !important;
+  max-width: 14px !important;
+  min-height: 14px !important;
+  max-height: 14px !important;
+  width: 14px !important;
+  height: 14px !important;
+  align-self: center !important;
+  valign: center !important;
+  halign: center !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 14px 14px !important;
+  transition: all 150ms ease-in-out;
 }
 
-button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  color: white;
-  background-color: alpha(currentColor, 0.15);
+headerbar windowcontrols button:hover,
+windowcontrols button:hover,
+headerbar windowcontrols button:active,
+windowcontrols button:active,
+headerbar windowcontrols button:checked,
+windowcontrols button:checked,
+headerbar windowcontrols button:backdrop,
+windowcontrols button:backdrop,
+headerbar button.titlebutton:hover,
+button.titlebutton:hover,
+headerbar button.titlebutton:active,
+button.titlebutton:active,
+headerbar button.titlebutton:backdrop,
+button.titlebutton:backdrop {
+  background: none;
+  background-color: transparent;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  color: white;
-  background-color: alpha(currentColor, 0.2);
+/* Hide all inner GTK icons, labels, pictures and children so native/app icons never overlap */
+headerbar windowcontrols button *,
+windowcontrols button *,
+window.csd headerbar windowcontrols button *,
+headerbar button.titlebutton *,
+button.titlebutton *,
+window.csd headerbar button.titlebutton * {
+  opacity: 0 !important;
+  filter: opacity(0) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  -gtk-icon-source: none !important;
+  color: transparent !important;
+  font-size: 0 !important;
 }
 
-button.minimize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:not(.suggested-action):not(.destructive-action) {
-  opacity: 0.65;
+/* Close (Red) - .close or 1st button */
+headerbar windowcontrols button.close,
+windowcontrols button.close,
+windowcontrols button:nth-child(1),
+headerbar button.titlebutton.close,
+button.titlebutton.close {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/></svg>") !important;
 }
+
+headerbar windowcontrols button.close:hover,
+windowcontrols button.close:hover,
+windowcontrols button:nth-child(1):hover,
+headerbar button.titlebutton.close:hover,
+button.titlebutton.close:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+}
+
+headerbar windowcontrols button.close:active,
+windowcontrols button.close:active,
+windowcontrols button:nth-child(1):active,
+headerbar button.titlebutton.close:active,
+button.titlebutton.close:active {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23BF4942' stroke='%23993832' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+}
+
+/* Minimize (Yellow) - .minimize or 2nd button */
+headerbar windowcontrols button.minimize,
+windowcontrols button.minimize,
+windowcontrols button:nth-child(2),
+headerbar button.titlebutton.minimize,
+button.titlebutton.minimize {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/></svg>") !important;
+}
+
+headerbar windowcontrols button.minimize:hover,
+windowcontrols button.minimize:hover,
+windowcontrols button:nth-child(2):hover,
+headerbar button.titlebutton.minimize:hover,
+button.titlebutton.minimize:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+}
+
+headerbar windowcontrols button.minimize:active,
+windowcontrols button.minimize:active,
+windowcontrols button:nth-child(2):active,
+headerbar button.titlebutton.minimize:active,
+button.titlebutton.minimize:active {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23C18E22' stroke='%2399701A' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+}
+
+/* Maximize (Green) - .maximize or 3rd button */
+headerbar windowcontrols button.maximize,
+windowcontrols button.maximize,
+windowcontrols button:nth-child(3),
+headerbar button.titlebutton.maximize,
+button.titlebutton.maximize {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/></svg>") !important;
+}
+
+headerbar windowcontrols button.maximize:hover,
+windowcontrols button.maximize:hover,
+windowcontrols button:nth-child(3):hover,
+headerbar button.titlebutton.maximize:hover,
+button.titlebutton.maximize:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+}
+
+headerbar windowcontrols button.maximize:active,
+windowcontrols button.maximize:active,
+windowcontrols button:nth-child(3):active,
+headerbar button.titlebutton.maximize:active,
+button.titlebutton.maximize:active {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%231D9830' stroke='%23157524' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+}
+
+/* Backdrop / Inactive window controls */
+headerbar windowcontrols button:backdrop,
+windowcontrols button:backdrop,
+window:backdrop windowcontrols button,
+headerbar button.titlebutton:backdrop,
+button.titlebutton:backdrop,
+window:backdrop button.titlebutton {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>") !important;
+}
+
+window.dark-theme windowcontrols button:backdrop,
+window.dark-theme headerbar windowcontrols button:backdrop,
+window.dark-theme button.titlebutton:backdrop,
+window.dark-theme headerbar button.titlebutton:backdrop {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>");
+}
+
 
 .monospace {
   font-family: monospace;
@@ -4179,3 +4326,104 @@ FIXME this is really an API */
 @define-color BLACK_500 #393634;
 @define-color BLACK_700 #33302F;
 @define-color BLACK_900 #2B2928;
+
+
+
+/* Sidebar Translucent Blur Styling */
+.sidebar,
+stacksidebar,
+stacksidebar list,
+.navigation-sidebar,
+list.navigation-sidebar,
+placessidebar,
+placessidebar .navigation-sidebar,
+scrolledwindow.sidebar,
+box.sidebar,
+paned .sidebar,
+.sidebar-pane,
+.sidebar-container,
+.sidebar-tint-pane,
+splitview > .sidebar,
+navigation-split-view > .sidebar,
+overlay-split-view > .sidebar,
+leafpack .sidebar {
+  border-style: none;
+  background-color: rgba(30, 30, 32, 0.78);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar list,
+stacksidebar list,
+.navigation-sidebar list {
+  background-color: transparent;
+  padding: 6px;
+}
+
+.sidebar row,
+stacksidebar row,
+.navigation-sidebar row,
+list.navigation-sidebar row,
+placessidebar row,
+.nav-button {
+  min-height: 32px;
+  margin: 2px 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  border: none;
+  transition: background-color 150ms ease-in-out;
+}
+
+.sidebar row:hover,
+stacksidebar row:hover,
+.navigation-sidebar row:hover,
+list.navigation-sidebar row:hover,
+placessidebar row:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.sidebar row:active,
+stacksidebar row:active,
+.navigation-sidebar row:active,
+list.navigation-sidebar row:active,
+placessidebar row:active {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.sidebar row:selected,
+stacksidebar row:selected,
+.navigation-sidebar row:selected,
+list.navigation-sidebar row:selected,
+placessidebar row:selected {
+  background-color: #007AFF;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.sidebar row:selected label,
+.sidebar row:selected image,
+stacksidebar row:selected label,
+stacksidebar row:selected image,
+.navigation-sidebar row:selected label,
+.navigation-sidebar row:selected image,
+list.navigation-sidebar row:selected label,
+list.navigation-sidebar row:selected image {
+  color: #FFFFFF;
+}
+
+window.csd,
+window.background {
+  border-radius: 14px;
+}
+
+paned > .view,
+paned > box:not(.sidebar),
+splitview > .view,
+splitview > box:not(.sidebar),
+navigation-split-view > .view,
+navigation-split-view > box:not(.sidebar),
+.content-pane {
+  background-color: #242426;
+}
