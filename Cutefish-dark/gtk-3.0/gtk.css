@@ -3950,10 +3950,25 @@ window.csd headerbar button.titlebutton * {
   font-size: 0 !important;
 }
 
+/* Inactive / Backdrop window controls (DEFINED FIRST SO ACTIVE RULES OVERRIDE) */
+headerbar windowcontrols button:backdrop,
+windowcontrols button:backdrop,
+windowcontrols:backdrop button,
+headerbar:backdrop windowcontrols button,
+window:backdrop windowcontrols button,
+headerbar button.titlebutton:backdrop,
+button.titlebutton:backdrop,
+window:backdrop button.titlebutton {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>") !important;
+}
+
 /* Close (Red) - .close or 1st button */
 headerbar windowcontrols button.close,
 windowcontrols button.close,
 windowcontrols button:nth-child(1),
+headerbar:not(:backdrop) windowcontrols button:nth-child(1),
+windowcontrols:not(:backdrop) button:nth-child(1),
+window:not(:backdrop) windowcontrols button:nth-child(1),
 headerbar button.titlebutton.close,
 button.titlebutton.close {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/></svg>") !important;
@@ -3979,6 +3994,9 @@ button.titlebutton.close:active {
 headerbar windowcontrols button.minimize,
 windowcontrols button.minimize,
 windowcontrols button:nth-child(2),
+headerbar:not(:backdrop) windowcontrols button:nth-child(2),
+windowcontrols:not(:backdrop) button:nth-child(2),
+window:not(:backdrop) windowcontrols button:nth-child(2),
 headerbar button.titlebutton.minimize,
 button.titlebutton.minimize {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/></svg>") !important;
@@ -4004,6 +4022,9 @@ button.titlebutton.minimize:active {
 headerbar windowcontrols button.maximize,
 windowcontrols button.maximize,
 windowcontrols button:nth-child(3),
+headerbar:not(:backdrop) windowcontrols button:nth-child(3),
+windowcontrols:not(:backdrop) button:nth-child(3),
+window:not(:backdrop) windowcontrols button:nth-child(3),
 headerbar button.titlebutton.maximize,
 button.titlebutton.maximize {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/></svg>") !important;
@@ -4023,23 +4044,6 @@ windowcontrols button:nth-child(3):active,
 headerbar button.titlebutton.maximize:active,
 button.titlebutton.maximize:active {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%231D9830' stroke='%23157524' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>") !important;
-}
-
-/* Backdrop / Inactive window controls */
-headerbar windowcontrols button:backdrop,
-windowcontrols button:backdrop,
-window:backdrop windowcontrols button,
-headerbar button.titlebutton:backdrop,
-button.titlebutton:backdrop,
-window:backdrop button.titlebutton {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>") !important;
-}
-
-window.dark-theme windowcontrols button:backdrop,
-window.dark-theme headerbar windowcontrols button:backdrop,
-window.dark-theme button.titlebutton:backdrop,
-window.dark-theme headerbar button.titlebutton:backdrop {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>");
 }
 
 
