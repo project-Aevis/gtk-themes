@@ -4287,18 +4287,16 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
   border-radius: 0;
 }
 
-/* Cutefish OS Traffic Light Window Controls */
+/* Cutefish OS Traffic Light Window Controls for GTK4 */
 windowcontrols {
-  border-spacing: 8px !important;
-  margin-left: 14px !important;
-  margin-right: 12px !important;
-  valign: center !important;
-  align-self: center !important;
+  border-spacing: 8px;
+  margin-left: 14px;
+  margin-right: 12px;
 }
 
 windowcontrols.start {
-  margin-left: 14px !important;
-  margin-right: 12px !important;
+  margin-left: 14px;
+  margin-right: 12px;
 }
 
 headerbar windowcontrols button,
@@ -4308,26 +4306,19 @@ headerbar button.titlebutton,
 button.titlebutton,
 window.csd headerbar button.titlebutton,
 headerbar.default-decoration windowcontrols button {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 50% !important;
-  box-shadow: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  margin: 0 1px !important;
-  min-width: 14px !important;
-  max-width: 14px !important;
-  min-height: 14px !important;
-  max-height: 14px !important;
-  width: 14px !important;
-  height: 14px !important;
-  align-self: center !important;
-  valign: center !important;
-  halign: center !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: 14px 14px !important;
+  background: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0 1px;
+  min-width: 14px;
+  min-height: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
   transition: all 150ms ease-in-out;
 }
 
@@ -4337,64 +4328,38 @@ headerbar windowcontrols button:active,
 windowcontrols button:active,
 headerbar windowcontrols button:checked,
 windowcontrols button:checked,
-headerbar windowcontrols button:backdrop,
-windowcontrols button:backdrop,
 headerbar button.titlebutton:hover,
 button.titlebutton:hover,
 headerbar button.titlebutton:active,
-button.titlebutton:active,
-headerbar button.titlebutton:backdrop,
-button.titlebutton:backdrop {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+button.titlebutton:active {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-/* Hide all inner GTK icons, labels, pictures and children so native/app icons never overlap */
-headerbar windowcontrols button *,
-windowcontrols button *,
-window.csd headerbar windowcontrols button *,
-headerbar button.titlebutton *,
-button.titlebutton *,
-window.csd headerbar button.titlebutton * {
-  opacity: 0 !important;
-  filter: opacity(0) !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: 0 !important;
-  max-height: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  -gtk-icon-source: none !important;
-  color: transparent !important;
-  font-size: 0 !important;
+/* Hide all inner GTK icons, labels, pictures so native icons do not overlap */
+headerbar windowcontrols button image,
+windowcontrols button image,
+window.csd headerbar windowcontrols button image,
+headerbar button.titlebutton image,
+button.titlebutton image,
+headerbar windowcontrols button label,
+windowcontrols button label,
+headerbar button.titlebutton label,
+button.titlebutton label,
+headerbar windowcontrols button picture,
+windowcontrols button picture {
+  opacity: 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  -gtk-icon-source: none;
+  color: transparent;
 }
 
-/* Hide non-standard titlebuttons (like windowicon, menubutton) inside windowcontrols */
-windowcontrols menubutton,
-windowcontrols button:not(.close):not(.minimize):not(.maximize),
-windowcontrols button.icon,
-button.titlebutton:not(.close):not(.minimize):not(.maximize),
-button.titlebutton.icon,
-windowicon {
-  display: none !important;
-  opacity: 0 !important;
-  min-width: 0 !important;
-  max-width: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  overflow: hidden !important;
-}
-
-/* Inactive / Backdrop window controls (DEFINED FIRST SO ACTIVE RULES OVERRIDE) */
+/* Inactive / Backdrop window controls (DEFINED FIRST) */
 headerbar windowcontrols button:backdrop,
 windowcontrols button:backdrop,
 windowcontrols:backdrop button,
@@ -4403,7 +4368,7 @@ window:backdrop windowcontrols button,
 headerbar button.titlebutton:backdrop,
 button.titlebutton:backdrop,
 window:backdrop button.titlebutton {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%234A4A4E' stroke='%233D3D40' stroke-width='1'/></svg>");
 }
 
 /* Close (Red) - .close or 1st button */
@@ -4415,7 +4380,7 @@ windowcontrols:not(:backdrop) button:nth-child(1),
 window:not(:backdrop) windowcontrols button:nth-child(1),
 headerbar button.titlebutton.close,
 button.titlebutton.close {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/></svg>");
 }
 
 headerbar windowcontrols button.close:hover,
@@ -4423,7 +4388,7 @@ windowcontrols button.close:hover,
 windowcontrols button:nth-child(1):hover,
 headerbar button.titlebutton.close:hover,
 button.titlebutton.close:hover {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>");
 }
 
 headerbar windowcontrols button.close:active,
@@ -4431,7 +4396,7 @@ windowcontrols button.close:active,
 windowcontrols button:nth-child(1):active,
 headerbar button.titlebutton.close:active,
 button.titlebutton.close:active {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23BF4942' stroke='%23993832' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23BF4942' stroke='%23993832' stroke-width='1'/><path d='M4.5 4.5 L9.5 9.5 M9.5 4.5 L4.5 9.5' stroke='%234D0000' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>");
 }
 
 /* Minimize (Yellow) - .minimize or 2nd button */
@@ -4443,7 +4408,7 @@ windowcontrols:not(:backdrop) button:nth-child(2),
 window:not(:backdrop) windowcontrols button:nth-child(2),
 headerbar button.titlebutton.minimize,
 button.titlebutton.minimize {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/></svg>");
 }
 
 headerbar windowcontrols button.minimize:hover,
@@ -4451,7 +4416,7 @@ windowcontrols button.minimize:hover,
 windowcontrols button:nth-child(2):hover,
 headerbar button.titlebutton.minimize:hover,
 button.titlebutton.minimize:hover {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.8'/></svg>");
 }
 
 headerbar windowcontrols button.minimize:active,
@@ -4459,7 +4424,7 @@ windowcontrols button.minimize:active,
 windowcontrols button:nth-child(2):active,
 headerbar button.titlebutton.minimize:active,
 button.titlebutton.minimize:active {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23C18E22' stroke='%2399701A' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%23C18E22' stroke='%2399701A' stroke-width='1'/><line x1='3.75' y1='7' x2='10.25' y2='7' stroke='%23663B00' stroke-width='1.3' stroke-linecap='round' opacity='0.9'/></svg>");
 }
 
 /* Maximize (Green) - .maximize or 3rd button */
@@ -4471,7 +4436,7 @@ windowcontrols:not(:backdrop) button:nth-child(3),
 window:not(:backdrop) windowcontrols button:nth-child(3),
 headerbar button.titlebutton.maximize,
 button.titlebutton.maximize {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/></svg>");
 }
 
 headerbar windowcontrols button.maximize:hover,
@@ -4479,7 +4444,7 @@ windowcontrols button.maximize:hover,
 windowcontrols button:nth-child(3):hover,
 headerbar button.titlebutton.maximize:hover,
 button.titlebutton.maximize:hover {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.8'/></svg>");
 }
 
 headerbar windowcontrols button.maximize:active,
@@ -4487,7 +4452,7 @@ windowcontrols button.maximize:active,
 windowcontrols button:nth-child(3):active,
 headerbar button.titlebutton.maximize:active,
 button.titlebutton.maximize:active {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%231D9830' stroke='%23157524' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><circle cx='7' cy='7' r='6' fill='%231D9830' stroke='%23157524' stroke-width='1'/><path d='M7 3.75 L7 10.25 M3.75 7 L10.25 7' stroke='%230B4D16' stroke-width='1.2' stroke-linecap='round' opacity='0.9'/></svg>");
 }
 
 
